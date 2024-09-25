@@ -1,5 +1,4 @@
 create database redboul;
-use redboul;
 
 create table users(
     id_users int primary key auto_increment,
@@ -22,14 +21,12 @@ create table produit(
 
 create table commandes(
     id_commandes int primary key auto_increment,
-    id_users int not null,
     id_produit int not null,
     quantite int not null,
     date_commande date not null,
-    foreign key (id_users) references users(id_users),
+    commentaire text not null,
     foreign key (id_produit) references produit(id_produit)
 );
-
 
 insert into produit (nom, prix, descriptions,images,stock) values 
 ('Redbull Sea blue Edition', 2.50, 'Description for Sea blue Edition', 'image1', 10),
