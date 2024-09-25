@@ -14,7 +14,7 @@ include("header.php");
 
     <main class="container">
 
-        <form action="ajouter_article.php" method="post" enctype="multipart/form-data" class="form">
+        <form action="index.php" method="post" enctype="multipart/form-data" class="form">
             <div>
                 <label for="nom">Nom du produit :</label>
                 <input type="text" name="nom" id="nom" placeholder="Entrez le nom du produit" required>
@@ -32,7 +32,7 @@ include("header.php");
                 <input type="file" name="image" id="image" accept="image/*" required>
             </div>
             <div>
-                <button type="submit" class="button-ajout">Ajouter l'article</button>
+                <button type="submit" class="button-ajout" href="index.php">Ajouter l'article</button>
             </div>
         </form>
     </main>
