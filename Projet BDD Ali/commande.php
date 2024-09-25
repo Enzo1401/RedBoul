@@ -1,6 +1,5 @@
 <?php
 include("header.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -10,22 +9,22 @@ include("header.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commander un produit</title>
 
-    <link rel="stylesheet" href="style.css  ">
+    <link rel="stylesheet" href="style-commande.css">
 </head>
 <body>
 
     <form action="validation.php" method="post" class="form">
         <div>
             <label for="nom"></label>
-            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
+            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" required>
         </div>
         <div>
             <label for="prenom"></label>
-            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom">
+            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom" required>
         </div>
         <div>
             <label for="adresse"></label>
-            <input type="text" name="adresse" id="adresse" placeholder="Entrez votre adresse">
+            <input type="text" name="adresse" id="adresse" placeholder="Entrez votre adresse" required>
         </div>
         <div>
             <label for="email"></label>
@@ -34,7 +33,7 @@ include("header.php");
      
         <div>
             <label for="produit">Sélectionnez un produit :</label>
-                <select name="produit" id="produit">
+                <select name="produit" id="produit" required>
                     <?php
                     foreach ($produits as $produit) {
                         echo '<option value="' . $produit['id_produit'] . '">' . $produit['nom'] . '</option>';
@@ -43,7 +42,12 @@ include("header.php");
                 </select>
             <br>
         </div>
-     
+        
+        <div>
+            <label for="quantite">Quantité :</label>
+            <input type="number" name="quantite" id="quantite" placeholder="Entrez la quantité" min="1" value="1" required>
+        </div>
+
         <div>
              <textarea name="message" placeholder="Ecrivez-nous"></textarea>
         </div>
