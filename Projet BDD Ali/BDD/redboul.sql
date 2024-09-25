@@ -3,9 +3,11 @@ use redboul;
 
 create table users(
     id_users int primary key auto_increment,
-    username varchar(50) not null,
+    nom varchar(50) not null,
+    prenom varchar(50) not null,
     passwords varchar(50) not null,
-    email varchar(100) not null
+    email varchar(100) not null,
+    adresse varchar(255) not null
 );
 
 
@@ -14,17 +16,18 @@ create table produit(
     nom varchar(50) not null,
     prix decimal(10,2) not null,
     descriptions text not null,
-    images image not null,
+    images varchar(255) not null,
     stock int not null
-
 );
 
 create table commandes(
-    id_commandes int primary key auto_increment
-    id_users int not null foreing key references users(id_users),
-    id_produit int not null foreing key references produit(id_produit),
+    id_commandes int primary key auto_increment,
+    id_users int not null,
+    id_produit int not null,
     quantite int not null,
-    date_commande date not null
+    date_commande date not null,
+    foreign key (id_users) references users(id_users),
+    foreign key (id_produit) references produit(id_produit)
 );
 
 
@@ -38,5 +41,3 @@ insert into produit (nom, prix, descriptions,images,stock) values
 ('Redbull Summer Edition',2,50,' ','image7',10),
 ('Redbull Energy Drink',2,50,' ','image8',10),
 ('Redbull Sugar Free',2,50,' ','image9',10);
-
-
