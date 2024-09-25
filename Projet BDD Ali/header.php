@@ -19,6 +19,7 @@
         </div>
         <nav>
             <ul class="color">
+                <li><a href="accueil.php" class="no-decoration">Accueil</a></li>
                 <li><a href="index.php" class="no-decoration">Nos produits</a></li>
                 <li><a href="commande.php" class="no-decoration">Commander</a></li>
             </ul>

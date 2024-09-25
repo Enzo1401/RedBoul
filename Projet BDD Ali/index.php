@@ -15,7 +15,7 @@ include("header.php");
 
     <!-- Contenu principal -->
     <main class="container">
-        <h1>Nos Produits</h1>
+        <h1 class="title-product">Nos Produits</h1>
 
     <!-- Bouton pour ajouter un nouvel article -->
         <div class="add-product">
