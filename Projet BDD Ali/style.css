@@ -1,0 +1,145 @@
+/*----------header----------*/
+
+/* Réinitialisation des styles par défaut de la page */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box; /* Pour une gestion plus cohérente des marges et des espacements */
+}
+
+body {
+    margin: 0;
+    padding-top: 71px; /* Ajoute un espace équivalent à la hauteur de l'en-tête */
+    font-family: 'Arial', sans-serif; /* Police par défaut */
+}
+
+header {
+    background-color: white; /* Couleur de fond de l'en-tête */
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments au centre */
+    justify-content: space-between; /* Aligne les éléments sur les côtés */
+    padding: 10px 30px; /* Espacement intérieur autour de l'en-tête */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    position: fixed; /* Fixe l'en-tête en haut de la page même lors du défilement */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Indice de profondeur pour s'assurer que l'en-tête est au-dessus des autres éléments */
+}
+
+.logo img {
+    width: 90px;
+    margin-top: 10px;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px; /* Taille du texte du logo si texte */
+}
+
+nav {
+    margin-left: auto; /* Aligne la navigation à droite de l'en-tête */
+}
+
+nav ul {
+    display: flex; /* Affiche les éléments de la liste en ligne */
+    gap: 30px; /* Espacement entre chaque élément de la navigation */
+}
+
+nav ul li a {
+    color: black;
+    font-size: 16px; /* Taille du texte des liens */
+    border: 1px solid transparent; /* Bordure transparente par défaut */
+    padding: 8px 16px; /* Espace intérieur pour plus de clarté */
+    transition: 0.4s ease; /* Transition fluide pour l'animation */
+    border-radius: 6px; /* Coins arrondis pour un style doux */
+}
+
+nav ul li a:hover {
+    background-color: red; /* Fond rouge au survol */
+    color: white; /* Texte blanc au survol */
+    border-color: red; /* Bordure devient rouge au survol */
+}
+
+/* formulaire de commande*/
+
+
+/* Style global pour une meilleure lisibilité */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* Style pour les champs de saisie */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style pour le bouton */
+button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Style pour le texte de zone de message */
+textarea {
+    resize: vertical;
+    height: 100px;
+}
