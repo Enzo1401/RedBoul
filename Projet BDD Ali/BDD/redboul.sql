@@ -29,7 +29,6 @@ create table commandes(
 );
 
 insert into produit (nom, prix, descriptions,images,stock) values 
-insert into produit (nom, prix, descriptions,images,stock) values 
 ('Redbull Sea blue Edition', 2.50, 'Description for Sea blue Edition', 'image/blueEdition.png', 10),
 ('Redbull Green Edition', 2.50, 'Description for Green Edition', 'image/greenEdition.png', 10),
 ('Redbull Red Edition', 2.50, 'Description for Red Edition', 'image/redEdition.png', 10),
