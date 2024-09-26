@@ -2,6 +2,11 @@
 include("header.php");
 ?>
 
+<?php
+include("BDD/bdd.php");
+$produits = $bdd->query("SELECT * FROM produit")->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -13,7 +18,7 @@ include("header.php");
 </head>
 <body>
 
-    <form action="validation.php" method="post" class="form">
+    <form action="sendCommande.php" method="post" class="form">
         <div>
             <label for="nom"></label>
             <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" required>
