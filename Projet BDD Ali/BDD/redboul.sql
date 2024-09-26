@@ -70,6 +70,44 @@ END //
 
 DELIMITER ;
 
+DELIMITER //
+
+CREATE TRIGGER update_stock_after_order
+AFTER INSERT ON commandes
+FOR EACH ROW
+BEGIN
+    -- Mettre à jour le stock du produit
+    UPDATE produit
+    SET stock = stock - NEW.quantite
+    WHERE id_produit = NEW.id_produit;
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE TRIGGER check_stock_before_insert
+BEFORE INSERT ON commandes
+FOR EACH ROW
+BEGIN
+    DECLARE current_stock INT;
+
+    -- Récupérer le stock actuel du produit
+    SELECT stock INTO current_stock 
+    FROM produit 
+    WHERE id_produit = NEW.id_produit;
+
+    -- Vérifier si le stock est suffisant
+    IF current_stock < NEW.quantite THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Stock insuffisant pour ce produit';
+    END IF;
+END //
+
+DELIMITER ;
+
+
 INSERT INTO users (id_users, nom, email) VALUES (1, 'Nom Utilisateur', 'email@example.com');
 
 
