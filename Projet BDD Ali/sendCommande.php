@@ -21,10 +21,10 @@ if($stockUser -> execute([$name, $prenom, $address, $mail]))
     {
         echo "Votre commande a bien été prise en compte";
     }
-else
-{
-    echo "Une erreur s'est produite durant la validation de votre commande, merci de réessayer plus tard";
-}
+    else
+    {
+        echo "Une erreur s'est produite durant la validation de votre commande, merci de réessayer plus tard";
+    }
 }
 else
 {

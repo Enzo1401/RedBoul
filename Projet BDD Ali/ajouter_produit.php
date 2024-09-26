@@ -14,7 +14,7 @@ include("header.php");
 
     <main class="container">
 
-        <form action="index.php" method="post" enctype="multipart/form-data" class="form">
+        <form action="addProduct.php" method="post" enctype="multipart/form-data" class="form">
             <div>
                 <label for="nom">Nom du produit :</label>
                 <input type="text" name="nom" id="nom" placeholder="Entrez le nom du produit" required>
@@ -26,6 +26,10 @@ include("header.php");
             <div>
                 <label for="prix">Prix :</label>
                 <input type="number" name="prix" id="prix" placeholder="Entrez le prix" required step="0.01">
+            </div>
+            <div>
+                <label for="prix">Quantitée :</label>
+                <input type="number" name="quantite" id="quantite" placeholder="Entrez la quantitée" required step="1">
             </div>
             <div>
                 <label for="image">Image du produit :</label>
