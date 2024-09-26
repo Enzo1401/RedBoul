@@ -27,7 +27,7 @@ foreach ($produits as $produit) {
         <p class='product-description'>" . $produit['descriptions'] . "</p>
         <p class='product-price'>" . $produit['prix'] . " €</p>
         <div class='product-actions'>
-            <a href='modifier_produit.php?id=" . $produit['id_produit'] . "' class='btn btn-edit'>Modifier</a>
+            <a href='modifyProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-edit'>Modifier</a>
             <a href='deleteProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-delete'>Supprimer</a>
         </div>
     </div>";

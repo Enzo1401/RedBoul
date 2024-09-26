@@ -89,20 +89,16 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:red;
+    color: red;
     text-align: center;
 }
 .hero-content h1 {
     font-size: 48px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .hero-content p {
     font-size: 28px;
-    margin-top: -5px;
-    margin-bottom: 250px;
-
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -113,12 +109,10 @@ nav ul li a:hover {
     border-radius: 5px;
     text-decoration: none;
     font-size: 18px;
-
 }
 
 .btn:hover {
     background-color: #043464;
-    margin-top: 1000px;
 }
 
 

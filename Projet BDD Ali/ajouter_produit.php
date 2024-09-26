@@ -25,7 +25,7 @@ include("header.php");
             </div>
             <div>
                 <label for="prix">Prix :</label>
-                <input type="number" name="prix" id="prix" placeholder="Entrez le prix" required step="0.01">
+                <input type="number" name="prix" id="prix" placeholder="Entrez le prix" required step="0.5">
             </div>
             <div>
                 <label for="prix">Quantitée :</label>
