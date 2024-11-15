@@ -66,6 +66,8 @@ insert into produit (nom, prix, descriptions,images,stock) values
 (?,?,?,?,?);
 
 select * from produit;
+insert into users(nom, prenom, passwords, email,adresse)VALUES(
+    'flahaut','axel','aaa','aaa@gmail.com','aa');
 
 
 delete from produit where nom= ?; 
