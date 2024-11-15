@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="button">Se connecter</button>
         </div>
         <div>
-            <a href="creationCompte.php" class="creationCompte">Créer un compte</a>
+            <a href="creationCompte.php" id="creationCompte">Créer un compte</a>
         </div>
         <!-- Affiche le message d'erreur si les informations sont incorrectes -->
         <?php if (isset($error)) : ?>
