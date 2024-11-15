@@ -58,6 +58,7 @@ INSERT INTO roles (role_name) VALUES
 
 INSERT INTO users (nom, prenom, passwords, email, adresse, id_role) 
 VALUES ('admin', 'admin', '1234', 'admin@gmail.com', 'rue du loulou', 1); -- 1 pour Administrateur, 2 pour Utilisateur
+
 -----------------------REQUETE SQL-----------------------
 
 
