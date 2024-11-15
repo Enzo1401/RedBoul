@@ -28,6 +28,15 @@ create table commandes(
     foreign key (id_produit) references produit(id_produit)
 );
 
+CREATE TABLE produit_log(
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    id_produit INT,
+    nom VARCHAR(50),
+    prix decimal(10,2) not null,
+    date_suppression TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_produit) REFERENCES produit(id_produit)  
+);
+
 insert into produit (nom, prix, descriptions,images,stock) values 
 ('Redbull Sea blue Edition', 2.50, 'Description for Sea blue Edition', 'image/blueEdition.png', 10),
 ('Redbull Green Edition', 2.50, 'Description for Green Edition', 'image/greenEdition.png', 10),
@@ -112,3 +121,13 @@ INSERT INTO users (id_users, nom, email) VALUES (1, 'Nom Utilisateur', 'email@ex
 
 
 CALL passer_commande(1, 1, 2, '2023-10-01');
+
+DELIMITER //
+
+CREATE TRIGGER log_suppression_produit
+AFTER DELETE ON produit
+FOR EACH ROW
+BEGIN
+    INSERT INTO produit_log (id_produit, nom, prix) VALUES (OLD.id_produit, OLD.nom, OLD.prix);
+END //
+DELIMITER ;
