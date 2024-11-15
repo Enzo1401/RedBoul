@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
     // Si l'utilisateur est connecté, affiche un message et un bouton de déconnexion
     echo "<p>Vous êtes déjà connecté.</p>";
     echo "<form method='post' action='deconnexion.php'>
-            <button type='submit'>Déconnexion</button>
+            <button type='submit' class='btn'>Déconnexion</button>
           </form>";
 } else {
     // Vérifie si le formulaire a été soumis
