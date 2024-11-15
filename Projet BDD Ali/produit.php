@@ -11,11 +11,6 @@ $produits = $bdd->query("SELECT * FROM produit")->fetchAll();
 echo "<main class='container'>";
 echo "<h1 class='title-product'>Nos Produits</h1>";
 
-// Bouton pour ajouter un nouvel article
-echo "<div class='add-product'>";
-echo "<a href='ajouter_produit.php' class='button-ajout'>Ajouter un nouvel article</a>";
-echo "</div>";
-
 // Grille des produits
 echo "<div class='product-grid'>";
 
@@ -26,10 +21,6 @@ foreach ($produits as $produit) {
         <h2 class='product-name'>" . $produit['nom'] . "</h2>
         <p class='product-description'>" . $produit['descriptions'] . "</p>
         <p class='product-price'>" . $produit['prix'] . " €</p>
-        <div class='product-actions'>
-            <a href='modifyProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-edit'>Modifier</a>
-            <a href='deleteProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-delete'>Supprimer</a>
-        </div>
     </div>";
 }
 

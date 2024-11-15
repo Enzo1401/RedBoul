@@ -31,7 +31,7 @@ $users = $bdd->query("SELECT * FROM users")->fetchAll();
             <button type="submit" class="button">Se connecter</button>
         </div>
         <div>
-            <a href="creationCompte.php" id="creationCompte">Créer un compte</a>
+            <a href="creationCompte.php" class="creationCompte">Créer un compte</a>
         </div>
     </form>
 </body>
