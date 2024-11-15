@@ -10,8 +10,11 @@ $address = $_POST['adresse'];
 $mail = $_POST['email'];
 $password = $_POST['passwords'];
 
+// Définir le rôle par défaut (par exemple, 2 pour "Utilisateur")
+$id_role = 2; // Assurez-vous que ce rôle existe dans la table "roles"
+
 // Préparer les requêtes pour insérer les données
-$user = $bdd->prepare('INSERT INTO users(nom, prenom, adresse, email, passwords) VALUES(?, ?, ?, ?, ?)');
+$user = $bdd->prepare('INSERT INTO users(nom, prenom, adresse, email, passwords, id_role) VALUES(?, ?, ?, ?, ?, ?)');
 
 // En-tête HTML avec inclusion du fichier CSS
 echo "<!DOCTYPE html>
@@ -25,7 +28,7 @@ echo "<!DOCTYPE html>
 <body>";
 
 // Vérification et exécution des requêtes
-if ($user->execute([$name, $prenom, $address, $mail, $password])) {
+if ($user->execute([$name, $prenom, $address, $mail, $password, $id_role])) {
     echo "<div class='order-message'>
                Merci pour votre inscription
               </div>
