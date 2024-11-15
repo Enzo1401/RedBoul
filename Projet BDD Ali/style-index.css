@@ -135,3 +135,16 @@ body {
     justify-content: center; /* Centre horizontalement */
     margin-bottom: 20px; /* Marge en dessous pour espacement */
 }
+
+.btnUser{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Pour que les deux boutons prennent chacun 50% de l'espace */
+    text-align: center;
+    background-color: #043464;
+}

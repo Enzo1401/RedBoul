@@ -1,3 +1,7 @@
+/* formulaire de commande*/
+
+
+/* Style global pour une meilleure lisibilité */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -8,23 +12,35 @@ body {
 
 form {
     background-color: white;
+    text-align: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
-    text-align: center;
     margin: auto;
-    margin-top: 135px;
-    margin-bottom: 135px;
+    margin-top: 120px;
+    margin-bottom: 120px;
 }
 
-div{
-    margin: 10px;
+/* Style pour les champs de saisie */
+form div {
+    margin-bottom: 20px;
 }
 
-input{
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="email"],
+textarea,
+select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -32,10 +48,39 @@ input{
     font-size: 16px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
-    margin-bottom: 10px;
 }
 
-.send_btn {
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style pour le champ de quantité */
+input[type="number"] {
+    width: 100%; /* Prend toute la largeur de l'élément parent */
+    padding: 10px; /* Espace intérieur pour rendre le champ plus confortable */
+    margin-top: 5px; /* Espace au-dessus du champ */
+    margin-bottom: 15px; /* Espace en dessous du champ */
+    border: 1px solid #ccc; /* Bordure grise claire */
+    border-radius: 4px; /* Coins arrondis pour un look moderne */
+    font-size: 16px; /* Taille de police pour le texte */
+    transition: border-color 0.3s; /* Transition pour les changements de couleur de bordure */
+}
+
+input[type="number"]:focus {
+    border-color: red; /* Change la couleur de la bordure au focus */
+    outline: none; /* Supprime le contour par défaut */
+}
+
+label {
+    font-weight: bold; /* Met le texte du label en gras */
+}
+
+/* Style pour le bouton */
+button {
     background-color: red;
     color: white;
     padding: 10px 20px;
@@ -44,48 +89,17 @@ input{
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease;
-    width: 100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 100%;
 }
 
-.send_btn:hover{
-    background-color: rgb(115, 180, 14);
-    color: black;
+button:hover {
+    background-color: #218838;
 }
 
-.msg_erreur{
-    color: red;
-    text-align: center;
-}
-
-.validate_msg{
-    color: green;
-    text-align: center;
-}
-
-.error_msg{
-    color: red;
-    text-align: center;
-}
-
-.link_go_home{
-    text-decoration: none;
-}
-
-.go_home{
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: 30px;
-    background-color: rgb( 144, 148, 151 );
-}
-
-.go_home:hover{
-    background-color: rgb( 98, 101, 103 );
-    color: white;
-    width: 220px;
-    height: 40px;
+/* Style pour le texte de zone de message */
+textarea {
+    resize: vertical;
+    height: 100px;
 }
 
 /* Style pour le message de confirmation de commande */

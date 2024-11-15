@@ -21,7 +21,7 @@ form {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
-    margin-top: 130px;
+    margin-top: 150px;
 }
 
 /* Style pour les champs de saisie */
@@ -38,6 +38,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea,
 select {
     width: 100%;
@@ -51,6 +52,7 @@ select {
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="password"]:focus,
 textarea:focus,
 select:focus {
     border-color: #007bff;

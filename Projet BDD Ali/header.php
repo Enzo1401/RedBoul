@@ -1,3 +1,20 @@
+<?php
+session_start()
+?>
+
+<header>
+    <!-- Autres éléments de votre header -->
+
+    <?php if (isset($_SESSION['id_users'])): ?>
+        <!-- Si l'utilisateur est connecté, afficher le bouton de déconnexion -->
+        <a href="deconnexion.php" class="button">Déconnexion</a>
+    <?php else: ?>
+        <!-- Si l'utilisateur n'est pas connecté, afficher le bouton de connexion -->
+        <a href="connexion.php" class="button">Connexion</a>
+    <?php endif; ?>
+
+</header>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +39,13 @@
                 <li><a href="index.php" class="no-decoration">Accueil</a></li>
                 <li><a href="produit.php" class="no-decoration">Nos produits</a></li>
                 <li><a href="commande.php" class="no-decoration">Commander</a></li>
-                <li><a href="connexion.php" class="no-decoration">Connexion</a></li>
+                <?php if (isset($_SESSION['id_users'])): ?>
+                    <!-- Si l'utilisateur est connecté, afficher le bouton de déconnexion -->
+                    <li><a href="deconnexion.php" class="button">Déconnexion</a></li>
+                <?php else: ?>
+                    <!-- Si l'utilisateur n'est pas connecté, afficher le bouton de connexion -->
+                    <li><a href="connexion.php" class="button">Connexion</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

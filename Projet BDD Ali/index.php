@@ -2,6 +2,41 @@
 include 'header.php'; 
 ?>
 
+<?php
+include("BDD/bdd.php");
+
+if(isset($_POST['send'])){
+    if(!empty($_POST['mail'] and !empty($_POST['password']))){
+        $mail = htmlspecialchars($_POST['mail']);
+        $password = sha1($_POST['password']);
+    
+        $recupUsers = $bdd->prepare("SELECT * FROM users WHERE email = ? AND mdp = ?");
+        $recupUsers ->execute(array($mail, $password));
+
+        if($recupUsers ->rowCount() > 0){
+            $user = $recupUsers->fetch();
+            $_SESSION['mail'] = $mail;
+            $_SESSION['mdp'] = $password;
+            $_SESSION['id_users'] = $user['id_users'];
+            $_SESSION['prenom'] = $user['prenom'];
+            echo "<div class='order-message'>
+                Ravi de vous revoir " . $_SESSION['prenom'] . "
+            </div>";
+        }
+        else{
+            echo "<div class='order-message' style='background-color: #dc3545;'>
+                Votre e-mail ou votre mot de passe est incorect
+            </div>";
+        }
+    }
+    else{
+        echo "<div class='order-message' style='background-color: #dc3545;'>
+                Veuillez remplir tous les champs du formulaire
+            </div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

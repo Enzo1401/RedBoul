@@ -35,6 +35,10 @@ $produits = $bdd->query("SELECT * FROM produit")->fetchAll();
             <label for="email"></label>
             <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail" required>
         </div>
+        <div>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required>
+        </div>
      
         <div>
             <label for="produit">Sélectionnez un produit :</label>
